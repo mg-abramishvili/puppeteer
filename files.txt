@@ -1,0 +1,170 @@
+<li><a href="http://127.0.0.1/?login"><span>Войти</span></a></li>
+<li><a href="http://www.ufa-tr.gazprom.ru/"><span></span></a></li>
+<li><a href="http://127.0.0.1/?section_id=1"><span>ОБ ОБЩЕСТВЕ</span></a></li>
+<li><a href="http://127.0.0.1/units.php"><span>Филиалы</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=1"><span>Общие сведения</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=2"><span>История</span></a></li>
+<li><a href="http://127.0.0.1/news.php"><span>Новости</span></a></li>
+<li><a href="http://127.0.0.1/?section_id=3"><span>ПРОИЗВОДСТВО</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=9"><span>Магистральные газопроводы</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=10"><span>Компрессорные станции</span></a></li>
+<li><a href="http://127.0.0.1/ratio/index.php"><span>Рационализаторская деятельность</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=62"><span>Производственная безопасность</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=69"><span>Безопасность дорожного движения</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=56"><span>Экология</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=81"><span>Интегрированная система менеджмента</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=74"><span>Система управления рисками и внутреннего контроля</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=70"><span>Гражданская защита</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=78"><span>Технологические схемы</span></a></li>
+<li><a href="http://127.0.0.1/?section_id=20"><span>СОЦИАЛЬНАЯ ПОЛИТИКА</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=21"><span>Кадровая политика</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=22"><span>Жилищная политика</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=23"><span>Оздоровление работников</span></a></li>
+<li><a href="http://127.0.0.1/mol/index.php"><span>Работа с молодежью</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=24"><span>Организация отдыха</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=25"><span>Спортивная жизнь Общества</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=26"><span>Культурная жизнь Общества</span></a></li>
+<li><a href="http://127.0.0.1/psih/index.php"><span>Психологическое сопровождение кадровой работы</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=57"><span>Газфонд</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=64"><span>Учебно-производственный центр</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=73"><span>Вакансии предприятия</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44"><span>ИНФОРМАЦИОННАЯ БЕЗОПАСНОСТЬ</span></a></li>
+<li><a href="/docfiles1.php"><span>РУКОВОДЯЩИЕ ДОКУМЕНТЫ</span></a></li>
+<li><a href="http://127.0.0.1/phonebook.php"><span>ТЕЛЕФОННЫЙ СПРАВОЧНИК</span></a></li>
+<li><a href="javascript:ShowSubMenu()"><span>ИНТРАНЕТ-ПРОГРАММЫ</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=80"><span>ФИНАНСОВЫЙ КАЛЕЙДОСКОП</span></a></li>
+<li><a href="http://127.0.0.1/gallery.php?galsection_id=-9"><span>ФОТОГАЛЕРЕЯ</span></a></li>
+<li><a href="http://127.0.0.1/weather.php"><span>ПОГОДА</span></a></li>
+<li><a href="http://127.0.0.1/polls.php"><span>ОПРОСЫ</span></a></li>
+<li><a href="http://127.0.0.1/files.php"><span>ГАЗЕТА</span></a></li>
+<li><a href="http://www.adm.gazprom.ru/"><span>��������-������
+��� "�������"</span></a></li>
+<li><a href="http://www.gazprom.ru/"><span>���� ��� "�������"</span></a></li>
+<li><a href="http://www.gazpromfakel.ru/"><span>������������� ��������� "�����"</span></a></li>
+<li><a href="http://gazpromspartakiada.ru/"><span>����������� ��� ��������</span></a></li>
+<li><a href="http://www.ufa-tr.gazprom.ru/docs/kd2016-2018.pdf"><span></span></a></li>
+<li><a href="http://vbashkortostane.gazprom.ru/"><span></span></a></li>
+<li><a href="http://127.0.0.1/sogaz.php"><span></span></a></li>
+<li><a href="http://127.0.0.1/gpb.php"><span></span></a></li>
+<li><a href="javascript:HideSubMenu()"><span></span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/24.02-04.04.2022.zip"><span>Дайджест 24.02-04.04.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/05.04-04.05.2022.zip"><span>Дайджест 05.04-04.05.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/05.05-31.05.2022.zip"><span>Дайджест 05.05-31.05.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/01.06-03.07.2022.zip"><span>Дайджест 01.06-03.07.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/4-17.03.2022.pdf"><span>Дайджест 04.07-17.07.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/18-24.07.2022.pdf"><span>Дайджест 18.07-24.07.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/25.07-31.07.2022.pdf"><span>Дайджест 25.07-31.07.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/01.08-07.08.2022.pdf"><span>Дайджест 01.08-07.08.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/08.08-14.08.2022.pdf"><span>Дайджест 08.08-14.08.2022</span></a></li>
+<li><a href="/docfiles/infosecurity/novosti/15.08-21.08.2022.pdf"><span>Дайджест 15.08-21.08.2022</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#1"><span>Обеспечение режима коммерческой тайны</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#2"><span>Защита персональных данных</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#3"><span>Техническая защита информации</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#4"><span>Критическая информационная инфраструктура</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#5"><span>Бланки заявлений</span></a></li>
+<li><a href=""><span>Обеспечение режима коммерческой тайны</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1248.pdf"><span>1.1. Положение о порядке подготовки и представления информационных материалов СМИ</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1247.pdf"><span>1.2. Мероприятия по соблюдению режима коммерческой тайны при увольнении работников</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1246.pdf"><span>1.3. Мероприятия по обеспечению режима коммерческой тайны при перемещении</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1245.pdf"><span>1.4. Инструкция по конфиденциальному делопроизводству в ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1244.pdf"><span>1.5. Инструкция о передаче информации, составляющей коммерческую тайну</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1249.pdf"><span>1.6. Положение о режиме коммерческой тайны в ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/333p.pdf"><span>1.7. Приказ от 19.08.2021 № 333-П "Об утверждении Перечня информации, составляющей коммерческую тайну, и иной конфиденциальной информации ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href=""><span>Защита персональных данных</span></a></li>
+<li><a href="/docfiles/infosecurity/2.1_perechen_dolznostei.pdf"><span>2.1. Перечень должностей</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1255.pdf"><span>2.2. Политика обработки персональных данных</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1256.pdf"><span>2.3. Положение об обработке персональных данных</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1257.docx"><span>2.4. Постановление Правительства Российской Федерации от 06 июля 2008 г. № 512</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1258.docx"><span>2.5. Постановление Правительства Российской Федерации от 01 ноября 2012 г. № 1119</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1259.docx"><span>2.6. Постановление Правительства Российской Федерации от 15 сентября 2008 г. № 687</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1260.docx"><span>2.7. Трудовой кодекс Российской Федерации</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1261.docx"><span>2.8. 149-ФЗ «Об информации, информационных технологиях и о защите информации»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1262.pdf"><span>2.9. Федеральный закон от 27 июля 2006 г. № 152-ФЗ «О персональных данных»</span></a></li>
+<li><a href=""><span>Техническая защита информации</span></a></li>
+<li><a href="/docfiles/infosecurity/261r-23.12.2019.pdf"><span>3.1. Распоряжение об изменении перечня разрешенного ПО</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1267.pdf"><span>3.2. Приказ 410-П от 14.08.2019 Порядок действий по своевременной нейтрализации деструктивных информационных воздействий</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-0141-2020.pdf"><span>3.3. СТО 2.2-2-0141-2020, Политика ИБ РСПД ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-0161-2020.pdf"><span>3.4. СТО 2.2-2-0161-2020, Политика ИБ ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1180-2020.pdf"><span>3.5. СТО 2.2-2-1180-2020, Концепция информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1271.pdf"><span>3.6. «СТО 3.2-2-0051-2019 Инструкция пользователю информационной инфраструктуры ООО «Газпром трансгаз Уфа» по обеспечению информационной безопасности»</span></a></li>
+<li><a href="/docfiles/infosecurity/sto3.2-2-052-2019.pdf"><span>3.7. «СТО 3.2-2-0052-2019 Регламент обновления программного обеспечения на серверах и персональных компьютерах в ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1273.pdf"><span>3.8. СТО 3.2-2-0053-2010 Регламент внесения изменений в эксплуатационную и техническую документацию</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1274.pdf"><span>3.9. СТО 3.2-2-0054-2019 Регламент по резервному копированию данных информационно-управляющих систем ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1275.pdf"><span>3.10. СТО 3.2-2-0055-2019 Инструкция по организации антивирусной защиты информационных ресурсов ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1276.pdf"><span>3.11. СТО 3.2-2-0056-2010, Регламент по ведению карты доступа к информационным ресурсам ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2022/rd(1867)-tec_inst-2-0057-2022.pdf"><span>3.12. СТО 3.2-2-0057-2022 Инструкция по организации парольной защиты в автоматизированных системах ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1278.pdf"><span>3.13. СТО 3.2-2-0058-2010 Регламент доступа в серверные и кроссовые помещения ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1279.pdf"><span>3.14. СТО 3.2-2-000059-2010 Единая системная политика AD</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1280.pdf"><span>3.15. СТО 3.2-2-0142-2020, Политика ИБ ИУС ПХД ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1282.pdf"><span>3.16. СТО 3.3-2-0550-2012 Инструкция по установке, модификации и ТО ПО и аппаратных средств ВС в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1283.pdf"><span>3.17. СТО 3.3-2-0551-2012, Регламент по уничтожению остаточной информации на носителях КИ в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1284.pdf"><span>3.18. СТО 3.3-2-0552-2016, Временный стандарт по разграничению полномочий и обязанностей в области информационной безопасности в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1285.pdf"><span>3.19. СТО 3.3-2-0787-2014, Порядок обращения с электронными носителями ключевой информации в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1286.pdf"><span>3.20. СТО 3.3-2-0788-2014, Временный регламент организации удаленной работы пользователей в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.3-2-001007-2020.pdf"><span>3.21. СТО 3.3-2-1007-2020, Регламент подключения и использования мобильных носителей информации в РСПД ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1290.pdf"><span>3.22. СТО 3.3-2-1041-2015 Регламент по использованию электронных подписей Группы Газпром</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1291.pdf"><span>3.23. СТО 3.3-2-1154-2016, Обеспечение информационной безопасности при использовании средств виртуализации операционных систем</span></a></li>
+<li><a href="/docfiles/infosecurity/content--44-1292.pdf"><span>3.24. СТО 3.3-2-1165-2016, Политика управления инцидентами информационной безопасности ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1318-2020.pdf"><span>3.25. СТО 3.2-2-1318-2020 Регламент управления доступом пользователей ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1318-2020iz1.pdf"><span>3.25-1 Изменение № 1 СТО 3.2-2-1318-2020 Регламент управления доступом пользователей ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/3.29.pdf"><span>3.26. Р Газпром 4.2-0-003-2009, Типовая политика информационной безопасности автоматизированной системы управления технологическими процессами</span></a></li>
+<li><a href="/docfiles/infosecurity/3.30.pdf"><span>3.27. СТО Газпром 4.2-2-002-2009, Требования к автоматизированным системам управления технологическими процессами</span></a></li>
+<li><a href="/docfiles/infosecurity/3.31.pdf"><span>3.28. Требования к обеспечению безопасности АСУТП во исполнение 187-ФЗ</span></a></li>
+<li><a href="/docfiles/infosecurity/sto3.4-9-1351-2019.pdf"><span>3.29. СТО 3.4-9-1351-2019 Регламент определения инцидентов информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/sto3.2-2-1357-2019.pdf"><span>3.30. СТО 3.2-2-1357-2019 Инструкция по определению инцидентов информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/sto3.2-2-1360-2019.pdf"><span>3.31. СТО 3.2-2-1360-2019 Положение о группе реагирования на инциденты информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1386-2020.pdf"><span>3.32. СТО 2.2-2-1386-2020 Политика обеспечения информационной безопасности при использовании мобильных программно-технических устройств и мобильных носителей информации в ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1404-2020.pdf"><span>3.33. СТО 2.2-2-1404-2020 Политика обеспечения информационной безопасности при использовании электронной почты и сети интернет ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1397-2020.pdf"><span>3.34. СТО 3.2-2-1397-2020 Программа управления инцидентами информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1394-2020.pdf"><span>3.35. СТО 2.2-2-1394-2020 Частная политика сетевой безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1395-2020.pdf"><span>3.36. СТО 2.2-2-1395-2020 Частная политика физической защиты объектов защиты информационной инфраструктуры ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1396-2020.pdf"><span>3.37. СТО 2.2-2-1396-2020 Частная политика безопасной эксплуатации технических средств обработки, хранения и передачи информации ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto1.2.2-1385-2020.pdf"><span>3.38. СТО 1.2.2-1385-2020 Частная политика резервного копирования ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto1.2-2-1376-2020.pdf"><span>3.39. СТО 1.2-2-1376-2020 Частная политика защиты от вредоносного программного обеспечения ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto1.2-2-1377-2020.pdf"><span>3.40. СТО 1.2-2-1377-2020 Частная политика регистрации и учета событий информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1384-2020.pdf"><span>3.41. СТО 2.2-2-1384-2020 Частная политика криптографической защиты информации ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1412-2020.pdf"><span>3.42. СТО 3.2-2-1412-2020 Регламент криптографической защиты ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto2.2-2-1393-2020.pdf"><span>3.43. СТО 2.2-2-1393-2020 Частная политика управления доступом пользователей ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1398-2020.pdf"><span>3.44. СТО 3.2-2-1398-2020 Регламент регистрации и учета событий информационной безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1399-2020.pdf"><span>3.45. СТО 3.2-2-1399-2020 Регламент сетевой безопасности ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-1400-2020.pdf"><span>3.46. СТО 3.2-2-1400-2020 Регламент физической защиты объектов защиты информационной инфраструктуры ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2022/sto-3.2-2-1491-2022.pdf"><span>3.47. СТО 3.2-2-1491-2022 Положение о системе мониторинга и контроля корпоративных коммуникаций для предотвращения утечек ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/forma_na_dostup_isis.docx"><span>Форма заявки на доступ пользователя к ИСиС</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/forma_na_lock_isis.docx"><span>Форма заявки на блокировку доступа к ИСиС</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/forma_na_unlock_isis.docx"><span>Форма заявки на разблокировку доступа к ИСиС</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/forma_na_del_isis.docx"><span>Форма заявки на удаление доступа к ИСиС</span></a></li>
+<li><a href=""><span>Критическая информационная инфраструктура</span></a></li>
+<li><a href="/docfiles/infosecurity/2020/sto3.2-2-0143-2020.pdf"><span>4.1. СТО 3.2-2-0143-2020 Политика ИБ АСУТП в ООО "Газпром трансгаз Уфа"</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto3.2-2-1340-2021.pdf"><span>4.2. СТО 3.2-2-1340-2021 Регламент по резервному копированию данных АСУ ТП в ООО «Газпром трансгаз Уфа»</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1436-2021.pdf"><span>4.3. СТО 3.2-2-1436-2021 Регламент антивирусной защиты АСУ ТП</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1437-2021.pdf"><span>4.4. СТО 3.2-2-1437-2021 Регламент аудита безопасности АСУ ТП Изм. № 1</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1438-2021.pdf"><span>4.5. СТО 3.2-2-1438-2021 Регламент управления доступом к техническим средствам ЗОКИИ Изм. № 1</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1447-2021.pdf"><span>4.6. СТО 3.2-2-1447-2021 Регламент использования внешних носителей данных и мобильных компьютеров на ЗОКИИ Изм. № 1</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1445-2021.pdf"><span>4.7. СТО 3.2-2-1445-2021 Регламент информирования и обучения персонала ЗОКИИ Изм. № 1</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2.-2-1448-2021.pdf"><span>4.8. СТО 3.2-2-1448-2021 Регламент по защите информационной (автоматизированной) системы и ее компонентов на значимых объектах КИИ Изм. № 1</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/algo_kompleks_rd(1837)-tec_inst-2-1475-2021.pdf"><span>4.9. Инструкция по управлению доступом к SCADA Алгостар и Комплекс</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/lis4510_rd-tec_inst-2-1468-2021.pdf"><span>4.10. Инструкция по управлению доступом к SCADA систем автоматического управления ЛИС4510</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/kvant1m_rius_rd-tec_inst-2-1467-2021.pdf"><span>4.11. Инструкция по управлению доступом к SCADA систем автоматического управления Квант-1М и РИУС</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/kvant-r_rd(1836)-tec_inst-2-1474-2021.pdf"><span>4.12. Инструкция по управлению доступом к SCADA систем автоматического управления Квант-Р</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/neman-r_rd(1835)-tec_inst-2-1473-2021.pdf"><span>4.13. Инструкция по управлению доступом к SCADA систем автоматического управления Неман-Р</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/win2000rd(1833)-tec_inst-2-1471-2021.pdf"><span>4.14. Инструкция по управлению доступом к ОС Windows 2000</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/winxprd(1834)-tec_inst-2-1472-2021.pdf"><span>4.15. Инструкция по управлению доступом к ОС Windows XP</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/win7_rd-tec_inst-2-1466-2021.pdf"><span>4.16. Инструкция по управлению доступом к ОС Windows 7</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/win8rd(1832)-tec_inst-2-1470-2021.pdf"><span>4.17. Инструкция по управлению доступом к ОС Windows 8</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/win10rd(1831)-tec_inst-2-1469-2021.pdf"><span>4.18. Инструкция по управлению доступом к ОС Windows 10</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/perechen.pdf"><span>4.19. Перечень ОРД по ИБ для ознакомления представителей сторонних организаций и обслуживающего персонала объекта КИИ</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1439-2022.pdf"><span>4.20. Руководство администратора СЗИ АСУ ТП</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/sto-3.2-2-1440-2021.pdf"><span>4.21. Руководство администратора АСУТП</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/zayavka_dostup.docx"><span>4.22. Заявка на получение доступа ЗОКИИ</span></a></li>
+<li><a href="/docfiles/infosecurity/kii/zayavka_udalenie.docx"><span>4.23. Заявка на удаление доступа ЗОКИИ</span></a></li>
+<li><a href=""><span>Бланки УЦ ООО «Газпром информ»</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2020/22.docx"><span>Доверенность для получения носителя ключевой информации</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2020/23.docx"><span>Доверенность для получения сертификата RSA</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2022/actual-2022_03.docx"><span>Заявление на создание и перевыпуск сертификата ЭП пользователя</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2022/actual-2022_05.docx"><span>Согласие на обработку ПД</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2022/actual-2022_06.docx"><span>Согласие на обработку ПД разрешенных субъектом для распространения удостоверяющим центром</span></a></li>
+<li><a href="/docfiles/infosecurity/skz_blanki/2020/24.docx"><span>Заявление на сброс пароля носителя ключевой информации</span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#"><span></span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#"><span></span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#"><span></span></a></li>
+<li><a href="http://127.0.0.1/?subsection_id=-44#"><span></span></a></li>
