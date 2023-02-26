@@ -74,7 +74,7 @@ async function run() {
         data.push(...await page.evaluate(() => Array.from(document.querySelectorAll('#content_wrapper'), (i) => ({
             date: i.querySelector('time').innerText.split(',')[0],
             title: i.querySelector('h1').innerText,
-            content: i.innerHTML.split('<p>​</p>').join(''),
+            content: i.innerHTML.split('<p>​</p>').join('').replace('<h1>' + i.querySelector('h1').innerHTML + '</h1>', "").replace('<time class="date">' + i.querySelector('time').innerHTML + '</time>', ""),
         }))))
     }
 
