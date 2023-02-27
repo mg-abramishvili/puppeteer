@@ -203,10 +203,21 @@ async function run() {
                 }
             })
 
+            // удаление лишних тегов (news_item_signature)
+            await page.evaluate(() => {
+                const divs = document.querySelectorAll('.news_item_signature')
+                if(divs.length) {
+                    divs.forEach(div => {
+                        div.remove()
+                    })
+                }
+            })
+
             // сохранение новости в массив
             data.push(...await page.evaluate(() => Array.from(document.querySelectorAll('#content_wrapper'), (i) => ({
                 date: i.querySelector('time').innerText.split(',')[0],
                 title: i.querySelector('h1').innerText,
+                cover: i.querySelectorAll('.media')[0] ? '/press/novosti/images/thumbs/' + i.querySelectorAll('.media')[0].querySelector('img').src.substring(i.querySelectorAll('.media')[0].querySelector('img').src.lastIndexOf('/')+1) : '',
                 content: i.innerHTML.split('<p>​</p>').join('').replace('<h1>' + i.querySelector('h1').innerHTML + '</h1>', "").replace('<time class="date">' + i.querySelector('time').innerHTML + '</time>', ""),
             }))))
 
