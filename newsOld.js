@@ -24,7 +24,7 @@ async function run() {
 
     const data = []
 
-    for (const url of links.slice(0, 6)) {
+    for (const url of links) {
         await page.goto(url)
 
         // получаем картинки новостей
