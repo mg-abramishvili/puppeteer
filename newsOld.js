@@ -34,7 +34,7 @@ async function run() {
         if(images.length) {
             for (const imagefile of images) {
                 http.get(imagefile, res => {
-                    const f = fs.createWriteStream(Path.resolve(__dirname, 'uploads', imagefile.replace('http://127.0.0.1/images/', '')))
+                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
 
                     res.pipe(f)
 
@@ -61,7 +61,7 @@ async function run() {
         if(files.length) {
             for (const file of files) {
                 http.get(file, res => {
-                    const f = fs.createWriteStream(Path.resolve(__dirname, 'uploads', file.replace('http://127.0.0.1/docs/', '')))
+                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/files', file.replace('http://127.0.0.1/docs/', '')))
 
                     res.pipe(f)
 
