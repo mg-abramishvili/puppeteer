@@ -27,6 +27,33 @@ async function run() {
     for (const url of links) {
         await page.goto(url)
 
+        // получаем одиночные картинки новостей
+        const pics = await page.$$eval('[rel="lightbox"]', as => as.map(a => a.href))
+
+        // скачиваем одиночные картинки новостей
+        if(pics.length) {
+            for (const pic of pics) {
+                http.get(pic, res => {
+                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
+
+                    res.pipe(f)
+
+                    f.on('finish', () => {
+                        f.close()
+                        console.log(`Image downloaded!`)
+                    })
+                })
+                .on('error', err => {
+                    console.log('Error: ', err.message)
+                })
+            }
+        }
+
+        // меняем урлы у одиночных картинок новостей
+        for (var i = 0; i < pics.length; i++) {
+            pics[i] = pics[i].replace('http://127.0.0.1/images', '/press/novosti/images');
+        }
+
         // получаем картинки новостей
         const images = await page.$$eval('.strip_of_thumbnails a img', as => as.map(a => a.src.replace('preview/', '')))
         
@@ -82,16 +109,18 @@ async function run() {
         }
 
         // записываем данные в массив
-        data.push(...await page.$$eval('#center', (newsItem, images, files) => {
+        data.push(...await page.$$eval('#center', (newsItem, pics, images, files) => {
             return newsItem.map(i => {
                 return {
+                    date: i.querySelector('#news_date').innerText,
                     title: i.querySelector('#news_name').innerText,
                     content: i.querySelector('.content').innerHTML,
+                    pic: pics,
                     gallery: images,
                     files: files,
                 }
             })
-        }, images, files))
+        }, pics, images, files))
 
         console.log('news item saved')
     }
