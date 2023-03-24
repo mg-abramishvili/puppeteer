@@ -112,10 +112,10 @@ async function run() {
         data.push(...await page.$$eval('#center', (newsItem, pics, images, files) => {
             return newsItem.map(i => {
                 return {
-                    date: i.querySelector('#news_date').innerText,
+                    date: i.querySelector('#news_date').innerText.replace('-', '/').replace('-', '/').split(" ")[0],
                     title: i.querySelector('#news_name').innerText,
                     content: i.querySelector('.content').innerHTML,
-                    pic: pics,
+                    pic: pics.length ? pics[0] : '',
                     gallery: images,
                     files: files,
                 }
