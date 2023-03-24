@@ -116,8 +116,8 @@ async function run() {
                     title: i.querySelector('#news_name').innerText,
                     content: i.querySelector('.content').innerHTML,
                     pic: pics.length ? pics[0] : '',
-                    gallery: images,
-                    files: files,
+                    gallery: images.length ? images : '',
+                    files: files.length ? files : '',
                 }
             })
         }, pics, images, files))
@@ -125,8 +125,53 @@ async function run() {
         console.log('news item saved')
     }
 
+    // перестраиваем строки для импорта битрикса
+    const finalData = []
+
+    data.forEach(i => {
+        if(i.gallery.length && i.files.length) {
+            i.gallery.forEach(galleryItem => {
+                i.files.forEach(fileItem => {
+                    finalData.push({
+                        date: i.date,
+                        title: i.title,
+                        content: i.content,
+                        pic: i.pic,
+                        gallery: galleryItem,
+                        files: fileItem,
+                    })
+                })
+            })
+        } else if(i.gallery.length && !i.files.length) {
+            i.gallery.forEach(galleryItem => {
+                finalData.push({
+                    date: i.date,
+                    title: i.title,
+                    content: i.content,
+                    pic: i.pic,
+                    gallery: galleryItem,
+                    files: i.files,
+                })
+            })
+        } else if(i.files.length && !i.gallery.length) {
+            i.files.forEach(fileItem => {
+                finalData.push({
+                    date: i.date,
+                    title: i.title,
+                    content: i.content,
+                    pic: i.pic,
+                    gallery: i.gallery,
+                    files: fileItem,
+                })
+            })
+        } else {
+            finalData.push(i)
+        }
+    })
+
+
     // записываем данные в файл
-    fs.writeFile('newsOld.json', JSON.stringify(data), (err) => {
+    fs.writeFile('newsOld.json', JSON.stringify(finalData), (err) => {
         if(err) throw err
     })
 
