@@ -24,7 +24,9 @@ async function run() {
 
     const data = []
 
-    for (const url of links) {
+    const totalImages = []
+
+    for (const url of links.slice(0, 10000)) {
         await page.goto(url)
 
         // получаем одиночные картинки новостей
@@ -33,19 +35,23 @@ async function run() {
         // скачиваем одиночные картинки новостей
         if(pics.length) {
             for (const pic of pics) {
-                http.get(pic, res => {
-                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
+                if(pic.includes('.jpg') || pic.includes('.jpeg') || pic.includes('.png') || pic.includes('.gif') || pic.includes('.bmp')) {
+                    http.get(pic, res => {
+                        const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
 
-                    res.pipe(f)
+                        res.pipe(f)
 
-                    f.on('finish', () => {
-                        f.close()
-                        console.log(`Image downloaded!`)
+                        f.on('finish', () => {
+                            f.close()
+                            console.log(`Image downloaded!`)
+                        })
                     })
-                })
-                .on('error', err => {
-                    console.log('Error: ', err.message)
-                })
+                    .on('error', err => {
+                        console.log('Error: ', err.message)
+                    })
+
+                    totalImages.push(1)
+                }
             }
         }
 
@@ -56,23 +62,27 @@ async function run() {
 
         // получаем картинки новостей
         const images = await page.$$eval('.strip_of_thumbnails a img', as => as.map(a => a.src.replace('preview/', '')))
-        
+
         // скачиваем картинки новостей
         if(images.length) {
             for (const imagefile of images) {
-                http.get(imagefile, res => {
-                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
+                if(imagefile.includes('.jpg') || imagefile.includes('.jpeg') || imagefile.includes('.png') || imagefile.includes('.gif') || imagefile.includes('.bmp')) {
+                    http.get(imagefile, res => {
+                        const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
 
-                    res.pipe(f)
+                        res.pipe(f)
 
-                    f.on('finish', () => {
-                        f.close()
-                        console.log(`Image downloaded!`)
+                        f.on('finish', () => {
+                            f.close()
+                            console.log(`Image downloaded!`)
+                        })
                     })
-                })
-                .on('error', err => {
-                    console.log('Error: ', err.message)
-                })
+                    .on('error', err => {
+                        console.log('Error: ', err.message)
+                    })
+
+                    totalImages.push(1)
+                }
             }
         }
 
@@ -174,6 +184,8 @@ async function run() {
     fs.writeFile('newsOld.json', JSON.stringify(finalData), (err) => {
         if(err) throw err
     })
+
+    console.log(totalImages.reduce((partialSum, a) => partialSum + a, 0))
 
     // закрываем браузер
     await browser.close()
