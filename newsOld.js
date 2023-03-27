@@ -26,34 +26,34 @@ async function run() {
 
     const totalImages = []
 
-    for (const url of links.slice(0, 10000)) {
+    for (const url of links.slice(0, 10000).reverse()) {
         await page.goto(url)
 
         // получаем одиночные картинки новостей
         const pics = await page.$$eval('[rel="lightbox"]', as => as.map(a => a.href))
 
         // скачиваем одиночные картинки новостей
-        if(pics.length) {
-            for (const pic of pics) {
-                if(pic.includes('.jpg') || pic.includes('.jpeg') || pic.includes('.png') || pic.includes('.gif') || pic.includes('.bmp')) {
-                    http.get(pic, res => {
-                        const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
+        // if(pics.length) {
+        //     for (const pic of pics) {
+        //         if(pic.includes('.jpg') || pic.includes('.jpeg') || pic.includes('.png') || pic.includes('.gif') || pic.includes('.bmp')) {
+        //             http.get(pic, res => {
+        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
 
-                        res.pipe(f)
+        //                 res.pipe(f)
 
-                        f.on('finish', () => {
-                            f.close()
-                            console.log(`Image downloaded!`)
-                        })
-                    })
-                    .on('error', err => {
-                        console.log('Error: ', err.message)
-                    })
+        //                 f.on('finish', () => {
+        //                     f.close()
+        //                     console.log(`Image downloaded!`)
+        //                 })
+        //             })
+        //             .on('error', err => {
+        //                 console.log('Error: ', err.message)
+        //             })
 
-                    totalImages.push(1)
-                }
-            }
-        }
+        //             totalImages.push(1)
+        //         }
+        //     }
+        // }
 
         // меняем урлы у одиночных картинок новостей
         for (var i = 0; i < pics.length; i++) {
@@ -64,27 +64,27 @@ async function run() {
         const images = await page.$$eval('.strip_of_thumbnails a img', as => as.map(a => a.src.replace('preview/', '')))
 
         // скачиваем картинки новостей
-        if(images.length) {
-            for (const imagefile of images) {
-                if(imagefile.includes('.jpg') || imagefile.includes('.jpeg') || imagefile.includes('.png') || imagefile.includes('.gif') || imagefile.includes('.bmp')) {
-                    http.get(imagefile, res => {
-                        const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
+        // if(images.length) {
+        //     for (const imagefile of images) {
+        //         if(imagefile.includes('.jpg') || imagefile.includes('.jpeg') || imagefile.includes('.png') || imagefile.includes('.gif') || imagefile.includes('.bmp')) {
+        //             http.get(imagefile, res => {
+        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
 
-                        res.pipe(f)
+        //                 res.pipe(f)
 
-                        f.on('finish', () => {
-                            f.close()
-                            console.log(`Image downloaded!`)
-                        })
-                    })
-                    .on('error', err => {
-                        console.log('Error: ', err.message)
-                    })
+        //                 f.on('finish', () => {
+        //                     f.close()
+        //                     console.log(`Image downloaded!`)
+        //                 })
+        //             })
+        //             .on('error', err => {
+        //                 console.log('Error: ', err.message)
+        //             })
 
-                    totalImages.push(1)
-                }
-            }
-        }
+        //             totalImages.push(1)
+        //         }
+        //     }
+        // }
 
         // меняем урлы у картинок
         for (var i = 0; i < images.length; i++) {
@@ -95,23 +95,23 @@ async function run() {
         const files = await page.$$eval('.files li a', as => as.map(a => a.href))
 
         // скачиваем файлы новостей
-        if(files.length) {
-            for (const file of files) {
-                http.get(file, res => {
-                    const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/files', file.replace('http://127.0.0.1/docs/', '')))
+        // if(files.length) {
+        //     for (const file of files) {
+        //         http.get(file, res => {
+        //             const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/files', file.replace('http://127.0.0.1/docs/', '')))
 
-                    res.pipe(f)
+        //             res.pipe(f)
 
-                    f.on('finish', () => {
-                        f.close()
-                        console.log(`PDF downloaded!`)
-                    })
-                })
-                .on('error', err => {
-                    console.log('Error: ', err.message)
-                })
-            }
-        }
+        //             f.on('finish', () => {
+        //                 f.close()
+        //                 console.log(`PDF downloaded!`)
+        //             })
+        //         })
+        //         .on('error', err => {
+        //             console.log('Error: ', err.message)
+        //         })
+        //     }
+        // }
 
         //меняем урлы у файлов
         for (var i = 0; i < files.length; i++) {
@@ -122,7 +122,7 @@ async function run() {
         data.push(...await page.$$eval('#center', (newsItem, pics, images, files) => {
             return newsItem.map(i => {
                 return {
-                    date: i.querySelector('#news_date').innerText.replace('-', '/').replace('-', '/').split(" ")[0],
+                    date: i.querySelector('#news_date').innerText.replace('-', '/').replace('-', '/'),
                     title: i.querySelector('#news_name').innerText,
                     content: i.querySelector('.content').innerHTML,
                     pic: pics.length ? pics[0] : '',
@@ -138,11 +138,12 @@ async function run() {
     // перестраиваем строки для импорта битрикса
     const finalData = []
 
-    data.forEach(i => {
+    data.forEach((i, index) => {
         if(i.gallery.length && i.files.length) {
             i.gallery.forEach(galleryItem => {
                 i.files.forEach(fileItem => {
                     finalData.push({
+                        id: index + 1,
                         date: i.date,
                         title: i.title,
                         content: i.content,
@@ -155,6 +156,7 @@ async function run() {
         } else if(i.gallery.length && !i.files.length) {
             i.gallery.forEach(galleryItem => {
                 finalData.push({
+                    id: index + 1,
                     date: i.date,
                     title: i.title,
                     content: i.content,
@@ -166,6 +168,7 @@ async function run() {
         } else if(i.files.length && !i.gallery.length) {
             i.files.forEach(fileItem => {
                 finalData.push({
+                    id: index + 1,
                     date: i.date,
                     title: i.title,
                     content: i.content,
@@ -175,7 +178,15 @@ async function run() {
                 })
             })
         } else {
-            finalData.push(i)
+            finalData.push({
+                id: index + 1,
+                date: i.date,
+                title: i.title,
+                content: i.content,
+                pic: i.pic,
+                gallery: i.gallery,
+                files: i.files,
+            })
         }
     })
 
