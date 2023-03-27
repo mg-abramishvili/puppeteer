@@ -60,7 +60,6 @@ async function run() {
     data.forEach((i, index) => {
         i.gallery.forEach(g => {
             finalData.push({
-                id: index + 6000,
                 date: i.date,
                 title: i.title,
                 image: g.img,
