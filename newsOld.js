@@ -30,14 +30,14 @@ async function run() {
         await page.goto(url)
 
         // получаем одиночные картинки новостей
-        const pics = await page.$$eval('[rel="lightbox"]', as => as.map(a => a.href))
+        const pics = await page.$$eval('[rel="lightbox"]', as => as.map(a => a.href.replace('images/', 'images/main_big/')))
 
         // скачиваем одиночные картинки новостей
         // if(pics.length) {
         //     for (const pic of pics) {
         //         if(pic.includes('.jpg') || pic.includes('.jpeg') || pic.includes('.png') || pic.includes('.gif') || pic.includes('.bmp')) {
         //             http.get(pic, res => {
-        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/', '')))
+        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', pic.replace('http://127.0.0.1/images/main_big/', '')))
 
         //                 res.pipe(f)
 
@@ -57,18 +57,18 @@ async function run() {
 
         // меняем урлы у одиночных картинок новостей
         for (var i = 0; i < pics.length; i++) {
-            pics[i] = pics[i].replace('http://127.0.0.1/images', '/press/novosti/images');
+            pics[i] = pics[i].replace('http://127.0.0.1/images/main_big/', '/press/novosti/images');
         }
 
         // получаем картинки новостей
-        const images = await page.$$eval('.strip_of_thumbnails a img', as => as.map(a => a.src.replace('preview/', '')))
+        const images = await page.$$eval('.strip_of_thumbnails a img', as => as.map(a => a.src.replace('preview/', 'main_big/')))
 
         // скачиваем картинки новостей
         // if(images.length) {
         //     for (const imagefile of images) {
         //         if(imagefile.includes('.jpg') || imagefile.includes('.jpeg') || imagefile.includes('.png') || imagefile.includes('.gif') || imagefile.includes('.bmp')) {
         //             http.get(imagefile, res => {
-        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/', '')))
+        //                 const f = fs.createWriteStream(Path.resolve(__dirname, 'novosti/images', imagefile.replace('http://127.0.0.1/images/main_big/', '')))
 
         //                 res.pipe(f)
 
@@ -88,7 +88,7 @@ async function run() {
 
         // меняем урлы у картинок
         for (var i = 0; i < images.length; i++) {
-            images[i] = images[i].replace('http://127.0.0.1/images', '/press/novosti/images');
+            images[i] = images[i].replace('http://127.0.0.1/images/main_big/', '/press/novosti/images');
         }
 
         // получаем файлы новостей
@@ -195,8 +195,6 @@ async function run() {
     fs.writeFile('newsOld.json', JSON.stringify(finalData), (err) => {
         if(err) throw err
     })
-
-    console.log(totalImages.reduce((partialSum, a) => partialSum + a, 0))
 
     // закрываем браузер
     await browser.close()
