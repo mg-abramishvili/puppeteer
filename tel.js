@@ -25,13 +25,12 @@ async function run() {
 
         if(tds.map(td => td.textContent)[0]) {
             return {
-                // otdel: tr.closest('.nsh_closed').querySelector('a').innerText,
-                otdel_path: getOtdelPath(tr.closest('.nsh_closed')),
                 fio: tds.map(td => td.textContent)[0],
                 job: tds.map(td => td.textContent)[1],
                 tel_inner: tds.map(td => td.textContent)[2],
                 tel_city: tds.map(td => td.textContent)[3],
-                kb: tds.map(td => td.textContent)[4]
+                kb: tds.map(td => td.textContent)[4].trim().replace('NULL', ''),
+                otdel: getOtdelPath(tr.closest('.nsh_closed')),
             }
         }
 
@@ -40,28 +39,28 @@ async function run() {
 
             let path = []
 
-            path.push(otdel)
+            path.push(otdel.trim())
 
             if(getParent(otdelElement)) {
-                path.push(getParent(otdelElement))
+                path.push(getParent(otdelElement).trim())
 
                 if(getParent(otdelElement.parentElement)) {
-                    path.push(getParent(otdelElement.parentElement))
+                    path.push(getParent(otdelElement.parentElement).trim())
 
                     if(getParent(otdelElement.parentElement.parentElement)) {
-                        path.push(getParent(otdelElement.parentElement.parentElement))
+                        path.push(getParent(otdelElement.parentElement.parentElement).trim())
 
                         if(getParent(otdelElement.parentElement.parentElement.parentElement)) {
-                            path.push(getParent(otdelElement.parentElement.parentElement.parentElement))
+                            path.push(getParent(otdelElement.parentElement.parentElement.parentElement).trim())
 
                             if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement)) {
-                                path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement))
+                                path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement).trim())
 
                                 if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
-                                    path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement))
+                                    path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement).trim())
 
                                     if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
-                                        path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement))
+                                        path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement).trim())
                                     }
                                 }
                             }
@@ -74,7 +73,27 @@ async function run() {
                 return path.indexOf(element) === index
             })
                 
-            return pathWithoutDuplicates.reverse().join(" | ")
+            return pathWithoutDuplicates.reverse().join('|')
+                .replace("ОБ ОБЩЕСТВЕ|АППАРАТ УПРАВЛЕНИЯ", "АППАРАТ УПРАВЛЕНИЯ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|АРКАУЛОВСКОЕ ЛПУМГ", "АРКАУЛОВСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|ДЮРТЮЛИНСКОЕ ЛПУМГ", "ДЮРТЮЛИНСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР", "ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|КАРМАСКАЛИНСКОЕ ЛПУМГ", "КАРМАСКАЛИНСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|МЕДИКО-САНИТАРНАЯ ЧАСТЬ", "МЕДИКО-САНИТАРНАЯ ЧАСТЬ")
+                .replace('АППАРАТ УПРАВЛЕНИЯ|ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"', 'ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"')
+                .replace("АППАРАТ УПРАВЛЕНИЯ|ПОЛЯНСКОЕ ЛПУМГ", "ПОЛЯНСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|ПРИЮТОВСКОЕ ЛПУМГ", "ПРИЮТОВСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|СИБАЙСКОЕ ЛПУМГ", "СИБАЙСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ", "СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|СТЕРЛИТАМАКСКОЕ ЛПУМГ", "СТЕРЛИТАМАКСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|СТОРОННИЕ ОРГАНИЗАЦИИ", "СТОРОННИЕ ОРГАНИЗАЦИИ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ", "УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ", "УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ СВЯЗИ", "УПРАВЛЕНИЕ СВЯЗИ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ", "УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|УРГАЛИНСКОЕ ЛПУМГ", "УРГАЛИНСКОЕ ЛПУМГ")
+                .replace("АППАРАТ УПРАВЛЕНИЯ|ШАРАНСКОЕ ЛПУМГ ", "ШАРАНСКОЕ ЛПУМГ ")
+                .trim()
         }
 
         function getParent(otdelElement) {
@@ -84,12 +103,10 @@ async function run() {
         }
     }))
 
-    console.log(phonebook.slice(200,250))
-
     // записываем данные в файл
-    // fs.writeFile('tel.json', JSON.stringify(finalData), (err) => {
-    //     if(err) throw err
-    // })
+    fs.writeFile('tel.json', JSON.stringify(phonebook.filter(n => n)), (err) => {
+        if(err) throw err
+    })
 
     // закрываем браузер
     await browser.close()
