@@ -38,23 +38,53 @@ async function run() {
         function getOtdelPath(otdelElement) {
             let otdel = otdelElement.querySelector('a').innerText
 
-            let parents = []
+            let path = []
+
+            path.push(otdel)
 
             if(getParent(otdelElement)) {
-                parents.push(getParent(otdelElement))
+                path.push(getParent(otdelElement))
+
+                if(getParent(otdelElement.parentElement)) {
+                    path.push(getParent(otdelElement.parentElement))
+
+                    if(getParent(otdelElement.parentElement.parentElement)) {
+                        path.push(getParent(otdelElement.parentElement.parentElement))
+
+                        if(getParent(otdelElement.parentElement.parentElement.parentElement)) {
+                            path.push(getParent(otdelElement.parentElement.parentElement.parentElement))
+
+                            if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement)) {
+                                path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement))
+
+                                if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
+                                    path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement))
+
+                                    if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
+                                        path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement))
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
+
+            let pathWithoutDuplicates = path.filter((element, index) => {
+                return path.indexOf(element) === index
+            })
                 
-            return parents.join(",") + ' | ' + otdel
+            return pathWithoutDuplicates.reverse().join(" | ")
         }
 
         function getParent(otdelElement) {
-            if(otdelElement.parentElement && otdelElement.parentElement.parentElement) {
-                return otdelElement.parentElement.parentElement.querySelector('a').innerText
+            if(otdelElement.parentElement) {
+                return otdelElement.parentElement.querySelector('a').innerText
             }
         }
     }))
 
-    console.log(phonebook.slice(0,6))
+    console.log(phonebook.slice(200,250))
 
     // записываем данные в файл
     // fs.writeFile('tel.json', JSON.stringify(finalData), (err) => {
