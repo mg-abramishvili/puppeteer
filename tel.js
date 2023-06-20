@@ -23,6 +23,33 @@ async function run() {
     const phonebook = await page.$$eval('table.users tbody tr', trs => trs.map(tr => {
         const tds = [...tr.getElementsByTagName('td')];
 
+        let path = []
+
+        getOtdelPath(tr.closest('.nsh_closed'))
+
+        let otdel = path.filter((element, index) => { return path.indexOf(element) === index }).reverse().join('|')
+        .replace("Войти|ОБ ОБЩЕСТВЕ|", "")
+        .replace("ОБ ОБЩЕСТВЕ|АППАРАТ УПРАВЛЕНИЯ", "АППАРАТ УПРАВЛЕНИЯ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|АРКАУЛОВСКОЕ ЛПУМГ", "АРКАУЛОВСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|ДЮРТЮЛИНСКОЕ ЛПУМГ", "ДЮРТЮЛИНСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР", "ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|КАРМАСКАЛИНСКОЕ ЛПУМГ", "КАРМАСКАЛИНСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|МЕДИКО-САНИТАРНАЯ ЧАСТЬ", "МЕДИКО-САНИТАРНАЯ ЧАСТЬ")
+        .replace('АППАРАТ УПРАВЛЕНИЯ|ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"', 'ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"')
+        .replace("АППАРАТ УПРАВЛЕНИЯ|ПОЛЯНСКОЕ ЛПУМГ", "ПОЛЯНСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|ПРИЮТОВСКОЕ ЛПУМГ", "ПРИЮТОВСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|СИБАЙСКОЕ ЛПУМГ", "СИБАЙСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ", "СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|СТЕРЛИТАМАКСКОЕ ЛПУМГ", "СТЕРЛИТАМАКСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|СТОРОННИЕ ОРГАНИЗАЦИИ", "СТОРОННИЕ ОРГАНИЗАЦИИ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ", "УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ", "УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ СВЯЗИ", "УПРАВЛЕНИЕ СВЯЗИ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ", "УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|УРГАЛИНСКОЕ ЛПУМГ", "УРГАЛИНСКОЕ ЛПУМГ")
+        .replace("АППАРАТ УПРАВЛЕНИЯ|ШАРАНСКОЕ ЛПУМГ", "ШАРАНСКОЕ ЛПУМГ")
+        + '|' + tr.closest('.nsh_closed').querySelector('a').innerText.trim()
+
         if(tds.map(td => td.textContent)[0]) {
             return {
                 fio: tds.map(td => td.textContent)[0],
@@ -30,78 +57,26 @@ async function run() {
                 tel_inner: tds.map(td => td.textContent)[2],
                 tel_city: tds.map(td => td.textContent)[3],
                 kb: tds.map(td => td.textContent)[4].trim().replace('NULL', ''),
-                otdel: getOtdelPath(tr.closest('.nsh_closed')),
+                otdel1: otdel.split("|")[0],
+                otdel2: otdel.split("|")[1],
+                otdel3: otdel.split("|")[2] + '|' + otdel.split("|")[3],
             }
         }
 
         function getOtdelPath(otdelElement) {
-            let otdel = otdelElement.querySelector('a').innerText
+            if(otdelElement.parentNode) {
+                if(otdelElement.parentNode.nodeName == 'UL') {
+                    getOtdelPath(otdelElement.parentNode)
+                } else {
+                    path.push(otdelElement.parentNode.querySelector('a').innerText.trim())
 
-            let path = []
-
-            path.push(otdel.trim())
-
-            if(getParent(otdelElement)) {
-                path.push(getParent(otdelElement).trim())
-
-                if(getParent(otdelElement.parentElement)) {
-                    path.push(getParent(otdelElement.parentElement).trim())
-
-                    if(getParent(otdelElement.parentElement.parentElement)) {
-                        path.push(getParent(otdelElement.parentElement.parentElement).trim())
-
-                        if(getParent(otdelElement.parentElement.parentElement.parentElement)) {
-                            path.push(getParent(otdelElement.parentElement.parentElement.parentElement).trim())
-
-                            if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement)) {
-                                path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement).trim())
-
-                                if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
-                                    path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement).trim())
-
-                                    if(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement)) {
-                                        path.push(getParent(otdelElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement).trim())
-                                    }
-                                }
-                            }
-                        }
-                    }
+                    getOtdelPath(otdelElement.parentNode)
                 }
-            }
-
-            let pathWithoutDuplicates = path.filter((element, index) => {
-                return path.indexOf(element) === index
-            })
-                
-            return pathWithoutDuplicates.reverse().join('|')
-                .replace("ОБ ОБЩЕСТВЕ|АППАРАТ УПРАВЛЕНИЯ", "АППАРАТ УПРАВЛЕНИЯ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|АРКАУЛОВСКОЕ ЛПУМГ", "АРКАУЛОВСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|ДЮРТЮЛИНСКОЕ ЛПУМГ", "ДЮРТЮЛИНСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР", "ИНЖЕНЕРНО-ТЕХНИЧЕСКИЙ ЦЕНТР")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|КАРМАСКАЛИНСКОЕ ЛПУМГ", "КАРМАСКАЛИНСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|МЕДИКО-САНИТАРНАЯ ЧАСТЬ", "МЕДИКО-САНИТАРНАЯ ЧАСТЬ")
-                .replace('АППАРАТ УПРАВЛЕНИЯ|ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"', 'ОБЪЕДИНЕННАЯ ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ "ГАЗПРОМ ТРАНСГАЗ УФА ПРОФСОЮЗ"')
-                .replace("АППАРАТ УПРАВЛЕНИЯ|ПОЛЯНСКОЕ ЛПУМГ", "ПОЛЯНСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|ПРИЮТОВСКОЕ ЛПУМГ", "ПРИЮТОВСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|СИБАЙСКОЕ ЛПУМГ", "СИБАЙСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ", "СЛУЖБА КОРПОРАТИВНОЙ ЗАЩИТЫ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|СТЕРЛИТАМАКСКОЕ ЛПУМГ", "СТЕРЛИТАМАКСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|СТОРОННИЕ ОРГАНИЗАЦИИ", "СТОРОННИЕ ОРГАНИЗАЦИИ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ", "УПРАВЛЕНИЕ АВАРИЙНО-ВОССТАНОВИТЕЛЬНЫХ РАБОТ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ", "УПРАВЛЕНИЕ МАТЕРИАЛЬНОГО-ТЕХНИЧЕСКОГО СНАБЖЕНИЯ И КОМПЛЕКТАЦИИ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ СВЯЗИ", "УПРАВЛЕНИЕ СВЯЗИ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ", "УПРАВЛЕНИЕ ТЕХНОЛОГИЧЕСКОГО ТРАНСПОРТА И СПЕЦИАЛЬНОЙ ТЕХНИКИ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|УРГАЛИНСКОЕ ЛПУМГ", "УРГАЛИНСКОЕ ЛПУМГ")
-                .replace("АППАРАТ УПРАВЛЕНИЯ|ШАРАНСКОЕ ЛПУМГ ", "ШАРАНСКОЕ ЛПУМГ ")
-                .trim()
-        }
-
-        function getParent(otdelElement) {
-            if(otdelElement.parentElement) {
-                return otdelElement.parentElement.querySelector('a').innerText
             }
         }
     }))
+
+    console.log(phonebook.filter(n => n))
 
     // записываем данные в файл
     fs.writeFile('tel.json', JSON.stringify(phonebook.filter(n => n)), (err) => {
